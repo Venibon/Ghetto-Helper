@@ -28,7 +28,7 @@ local cfg = inicfg.load({
       Invite = false,
       InvRank = 1,
       UnInvite = false,
-      UvalText = u8'Выселен.',
+      UvalText = u8'Г‚Г»Г±ГҐГ«ГҐГ­.',
       SpawnCar = false,
       NaborBang = 0,
       Nabor = false,
@@ -71,15 +71,15 @@ local cmdm4 = imgui.ImBool(cfg.config.CmdM4)
 --==--Local--==--
 local Timer = {state = false, start = 0, time = 8}
 local menu = 1
-local menun = 'Главная'
+local menun = 'ГѓГ«Г ГўГ­Г Гї'
 local styles = {
-    u8'Синяя тема',
-    u8'Зеленая тема',
-    u8'Розовая тема',
-    u8'Оранджевая тема'
+    u8'Г‘ГЁГ­ГїГї ГІГҐГ¬Г ',
+    u8'Г‡ГҐГ«ГҐГ­Г Гї ГІГҐГ¬Г ',
+    u8'ГђГ®Г§Г®ГўГ Гї ГІГҐГ¬Г ',
+    u8'ГЋГ°Г Г­Г¤Г¦ГҐГўГ Гї ГІГҐГ¬Г '
 }
 local bands = {
-    u8'Не указано.',
+    u8'ГЌГҐ ГіГЄГ Г§Г Г­Г®.',
     u8'Grove',
     u8'Ballas',
     u8'Aztec',
@@ -324,44 +324,44 @@ function imgui.OnDrawFrame()
         imgui.SetNextWindowPos(imgui.ImVec2(350.0,300.0), imgui.Cond.FirstUseEver)
         imgui.Begin('Ghetto Helper by VRush | '..u8(menun), window, imgui.WindowFlags.AlwaysAutoResize)
         imgui.BeginChild('##left', imgui.ImVec2(150, 300), true)
-        if imgui.Button(u8('Главная'), imgui.ImVec2(-1, 25)) then
+        if imgui.Button(u8('ГѓГ«Г ГўГ­Г Гї'), imgui.ImVec2(-1, 25)) then
             menu = 1
-            menun = 'Главная'
+            menun = 'ГѓГ«Г ГўГ­Г Гї'
         end
-        if imgui.Button(u8('Функции'), imgui.ImVec2(-1, 25)) then
+        if imgui.Button(u8('Г”ГіГ­ГЄГ¶ГЁГЁ'), imgui.ImVec2(-1, 25)) then
             menu = 2
-            menun = 'Функции'
+            menun = 'Г”ГіГ­ГЄГ¶ГЁГЁ'
         end
         if menu == 3 or menu == 2 then
-            if imgui.Button(u8('Для 9+ рангов'), imgui.ImVec2(-1, 25)) then
+            if imgui.Button(u8('Г„Г«Гї 9+ Г°Г Г­ГЈГ®Гў'), imgui.ImVec2(-1, 25)) then
                 menu = 3
-                menun = 'Для 9+ рангов'
+                menun = 'Г„Г«Гї 9+ Г°Г Г­ГЈГ®Гў'
             end
         end
-        if imgui.Button(u8('Команды'), imgui.ImVec2(-1, 25)) then
+        if imgui.Button(u8('ГЉГ®Г¬Г Г­Г¤Г»'), imgui.ImVec2(-1, 25)) then
             menu = 4
-            menun = 'Команды'
+            menun = 'ГЉГ®Г¬Г Г­Г¤Г»'
         end
-        if imgui.Button(u8('Настройки меню'), imgui.ImVec2(-1, 25)) then
+        if imgui.Button(u8('ГЌГ Г±ГІГ°Г®Г©ГЄГЁ Г¬ГҐГ­Гѕ'), imgui.ImVec2(-1, 25)) then
             menu = 5
-            menun = 'Настройки меню'
+            menun = 'ГЌГ Г±ГІГ°Г®Г©ГЄГЁ Г¬ГҐГ­Гѕ'
         end
-        if imgui.Button(u8('О скрипте'), imgui.ImVec2(-1, 25)) then
+        if imgui.Button(u8('ГЋ Г±ГЄГ°ГЁГЇГІГҐ'), imgui.ImVec2(-1, 25)) then
             menu = 6
-            menun = 'О скрипте'
+            menun = 'ГЋ Г±ГЄГ°ГЁГЇГІГҐ'
         end
         imgui.EndChild()
         imgui.SameLine()
         imgui.BeginChild('##right', imgui.ImVec2(500, 300), true)
         if menu == 1 then
-            imgui.Text(u8'Привет, это Ghetto Helper by VRush')
-            imgui.Text(u8'Скрипт создан для упрощения игры в гетто или на каптах')
-            imgui.Text(u8'Описание функций вы можете посмотреть наведя курсор на серый текст (?) возле переключателя функции')
+            imgui.Text(u8'ГЏГ°ГЁГўГҐГІ, ГЅГІГ® Ghetto Helper by VRush')
+            imgui.Text(u8'Г‘ГЄГ°ГЁГЇГІ Г±Г®Г§Г¤Г Г­ Г¤Г«Гї ГіГЇГ°Г®Г№ГҐГ­ГЁГї ГЁГЈГ°Г» Гў ГЈГҐГІГІГ® ГЁГ«ГЁ Г­Г  ГЄГ ГЇГІГ Гµ')
+            imgui.Text(u8'ГЋГЇГЁГ±Г Г­ГЁГҐ ГґГіГ­ГЄГ¶ГЁГ© ГўГ» Г¬Г®Г¦ГҐГІГҐ ГЇГ®Г±Г¬Г®ГІГ°ГҐГІГј Г­Г ГўГҐГ¤Гї ГЄГіГ°Г±Г®Г° Г­Г  Г±ГҐГ°Г»Г© ГІГҐГЄГ±ГІ (?) ГўГ®Г§Г«ГҐ ГЇГҐГ°ГҐГЄГ«ГѕГ·Г ГІГҐГ«Гї ГґГіГ­ГЄГ¶ГЁГЁ')
         end
         if menu == 2 then
-            imgui.Text(u8'Сбив на Z')
+            imgui.Text(u8'Г‘ГЎГЁГў Г­Г  Z')
             imgui.SameLine()
-            imgui.Ques('При нажатии на Z в чат будет отправляться пустое сообщение.')
+            imgui.Ques('ГЏГ°ГЁ Г­Г Г¦Г ГІГЁГЁ Г­Г  Z Гў Г·Г ГІ ГЎГіГ¤ГҐГІ Г®ГІГЇГ°Г ГўГ«ГїГІГјГ±Гї ГЇГіГ±ГІГ®ГҐ Г±Г®Г®ГЎГ№ГҐГ­ГЁГҐ.')
             imgui.SameLine()
             if imgui.ToggleButton('##Sbiv', checksbiv) then
                 cfg.config.SbivBind = checksbiv.v
@@ -369,15 +369,15 @@ function imgui.OnDrawFrame()
             end
             imgui.Text(u8'DrugTimer')
             imgui.SameLine()
-            imgui.Ques('При нажатии на Х будет использоватся нарко и запускаться таймер на экране.')
+            imgui.Ques('ГЏГ°ГЁ Г­Г Г¦Г ГІГЁГЁ Г­Г  Г• ГЎГіГ¤ГҐГІ ГЁГ±ГЇГ®Г«ГјГ§Г®ГўГ ГІГ±Гї Г­Г Г°ГЄГ® ГЁ Г§Г ГЇГіГ±ГЄГ ГІГјГ±Гї ГІГ Г©Г¬ГҐГ° Г­Г  ГЅГЄГ°Г Г­ГҐ.')
             imgui.SameLine()
             if imgui.ToggleButton('##DrugTimer', checkdtimer) then
                 cfg.config.DrugTimer = checkdtimer.v
                 inicfg.save(cfg,'Ghetto Helper/Ghetto Helper.ini')
             end
-            imgui.Text(u8'Колокольчик')
+            imgui.Text(u8'ГЉГ®Г«Г®ГЄГ®Г«ГјГ·ГЁГЄ')
             imgui.SameLine()
-            imgui.Ques('При нанесении урона, будет проигрыватся звук.')
+            imgui.Ques('ГЏГ°ГЁ Г­Г Г­ГҐГ±ГҐГ­ГЁГЁ ГіГ°Г®Г­Г , ГЎГіГ¤ГҐГІ ГЇГ°Г®ГЁГЈГ°Г»ГўГ ГІГ±Гї Г§ГўГіГЄ.')
             imgui.SameLine()
             if imgui.ToggleButton('##bell', checkbell) then
                 cfg.config.Bell = checkbell.v
@@ -385,7 +385,7 @@ function imgui.OnDrawFrame()
             end
             imgui.Text(u8'Kill State')
             imgui.SameLine()
-            imgui.Ques('Надпись +kill при убийстве')
+            imgui.Ques('ГЌГ Г¤ГЇГЁГ±Гј +kill ГЇГ°ГЁ ГіГЎГЁГ©Г±ГІГўГҐ')
             imgui.SameLine()
             if imgui.ToggleButton('##kill', checkkill) then
                 cfg.config.Kill = checkkill.v
@@ -393,21 +393,21 @@ function imgui.OnDrawFrame()
             end
             imgui.Text(u8'Capt Stats')
             imgui.SameLine()
-            imgui.Ques('Ваша статистиза капт в слева под радаром')
+            imgui.Ques('Г‚Г ГёГ  Г±ГІГ ГІГЁГ±ГІГЁГ§Г  ГЄГ ГЇГІ Гў Г±Г«ГҐГўГ  ГЇГ®Г¤ Г°Г Г¤Г Г°Г®Г¬')
             imgui.SameLine()
             if imgui.ToggleButton('##stats', checkstats) then
                 cfg.config.Stats = checkstats.v
                 inicfg.save(cfg,'Ghetto Helper/Ghetto Helper.ini')
             end
             imgui.SameLine()
-            if imgui.Button(u8'Изменить позицию') then 
+            if imgui.Button(u8'Г€Г§Г¬ГҐГ­ГЁГІГј ГЇГ®Г§ГЁГ¶ГЁГѕ') then 
                 changestatspos = true             
-                msg('Нажмите ЛКМ чтобы сохранить позицию.') 
+                msg('ГЌГ Г¦Г¬ГЁГІГҐ Г‹ГЉГЊ Г·ГІГ®ГЎГ» Г±Г®ГµГ°Г Г­ГЁГІГј ГЇГ®Г§ГЁГ¶ГЁГѕ.') 
                 window.v = false
             end
             imgui.Text(u8'HPHud')
             imgui.SameLine()
-            imgui.Ques('Отображение кол-ва хп на полоске')
+            imgui.Ques('ГЋГІГ®ГЎГ°Г Г¦ГҐГ­ГЁГҐ ГЄГ®Г«-ГўГ  ГµГЇ Г­Г  ГЇГ®Г«Г®Г±ГЄГҐ')
             imgui.SameLine()
             if imgui.ToggleButton('##stats', checkhphud) then
                 cfg.config.HPHud = checkhphud.v
@@ -416,9 +416,9 @@ function imgui.OnDrawFrame()
         end
         if menu == 3 then
             imgui.PushItemWidth(82.5)
-            imgui.Text(u8'Быстрый инвайт')
+            imgui.Text(u8'ГЃГ»Г±ГІГ°Г»Г© ГЁГ­ГўГ Г©ГІ')
             imgui.SameLine()
-            imgui.Ques('Автоматически будет отправлять инвайт с РП отыгровкой. Активация: ПКМ + 1')
+            imgui.Ques('ГЂГўГІГ®Г¬Г ГІГЁГ·ГҐГ±ГЄГЁ ГЎГіГ¤ГҐГІ Г®ГІГЇГ°Г ГўГ«ГїГІГј ГЁГ­ГўГ Г©ГІ Г± ГђГЏ Г®ГІГ»ГЈГ°Г®ГўГЄГ®Г©. ГЂГЄГІГЁГўГ Г¶ГЁГї: ГЏГЉГЊ + 1')
             imgui.SameLine()
             if imgui.ToggleButton(u8'##inv', checkinvite) then
                 cfg.config.Invite = checkinvite.v
@@ -426,7 +426,7 @@ function imgui.OnDrawFrame()
             end
             imgui.SameLine()
             if cfg.config.Invite then
-                if imgui.InputInt(u8'Ранг при инвайте', invrank) then
+                if imgui.InputInt(u8'ГђГ Г­ГЈ ГЇГ°ГЁ ГЁГ­ГўГ Г©ГІГҐ', invrank) then
                     cfg.config.InvRank = invrank.v
                     inicfg.save(cfg,'Ghetto Helper/Ghetto Helper.ini')
                 end
@@ -435,9 +435,9 @@ function imgui.OnDrawFrame()
                 invrank.v = 1
             end
             imgui.PushItemWidth(120)
-            imgui.Text(u8'Быстрое увольнение')
+            imgui.Text(u8'ГЃГ»Г±ГІГ°Г®ГҐ ГіГўГ®Г«ГјГ­ГҐГ­ГЁГҐ')
             imgui.SameLine()
-            imgui.Ques('Быстрое увольнение члена банды. Активация: /fu [ID]')
+            imgui.Ques('ГЃГ»Г±ГІГ°Г®ГҐ ГіГўГ®Г«ГјГ­ГҐГ­ГЁГҐ Г·Г«ГҐГ­Г  ГЎГ Г­Г¤Г». ГЂГЄГІГЁГўГ Г¶ГЁГї: /fu [ID]')
             imgui.SameLine()
             if imgui.ToggleButton(u8'##uval', checkuninvite) then
                 cfg.config.UnInvite = checkuninvite.v
@@ -445,30 +445,30 @@ function imgui.OnDrawFrame()
             end
             imgui.SameLine()
             if cfg.config.UnInvite then
-                if imgui.InputText(u8'Причина увольнения', uvaltext) then
+                if imgui.InputText(u8'ГЏГ°ГЁГ·ГЁГ­Г  ГіГўГ®Г«ГјГ­ГҐГ­ГЁГї', uvaltext) then
                     cfg.config.UnInviteText = uvaltext.v
                     inicfg.save(cfg,'Ghetto Helper/Ghetto Helper.ini')
                 end
             end
-            imgui.Text(u8'Быстрый спавн каров')
+            imgui.Text(u8'ГЃГ»Г±ГІГ°Г»Г© Г±ГЇГ ГўГ­ ГЄГ Г°Г®Гў')
             imgui.SameLine()
-            imgui.Ques('Быстрый спавн каров фракции /scar')
+            imgui.Ques('ГЃГ»Г±ГІГ°Г»Г© Г±ГЇГ ГўГ­ ГЄГ Г°Г®Гў ГґГ°Г ГЄГ¶ГЁГЁ /scar')
             imgui.SameLine()
             if imgui.ToggleButton(u8'##scar', checkspawncar) then
                 cfg.config.SpawnCar = checkspawncar.v
                 inicfg.save(cfg,'Ghetto Helper/Ghetto Helper.ini')
             end
-            imgui.Text(u8'Быстрое открытие склада')
+            imgui.Text(u8'ГЃГ»Г±ГІГ°Г®ГҐ Г®ГІГЄГ°Г»ГІГЁГҐ Г±ГЄГ«Г Г¤Г ')
             imgui.SameLine()
-            imgui.Ques('Быстрое открытие складав фракции /sk')
+            imgui.Ques('ГЃГ»Г±ГІГ°Г®ГҐ Г®ГІГЄГ°Г»ГІГЁГҐ Г±ГЄГ«Г Г¤Г Гў ГґГ°Г ГЄГ¶ГЁГЁ /sk')
             imgui.SameLine()
             if imgui.ToggleButton(u8'##sklad', checksklad) then
                 cfg.config.Sklad = checksklad.v
                 inicfg.save(cfg,'Ghetto Helper/Ghetto Helper.ini')
             end
-            imgui.Text(u8'Объявления о наборе')
+            imgui.Text(u8'ГЋГЎГєГїГўГ«ГҐГ­ГЁГї Г® Г­Г ГЎГ®Г°ГҐ')
             imgui.SameLine()
-            imgui.Ques('Быстрая рассылка в /vr /fam /al о наборе во фракцию при вводе команды /na')
+            imgui.Ques('ГЃГ»Г±ГІГ°Г Гї Г°Г Г±Г±Г»Г«ГЄГ  Гў /vr /fam /al Г® Г­Г ГЎГ®Г°ГҐ ГўГ® ГґГ°Г ГЄГ¶ГЁГѕ ГЇГ°ГЁ ГўГўГ®Г¤ГҐ ГЄГ®Г¬Г Г­Г¤Г» /na')
             imgui.SameLine()
             if imgui.ToggleButton(u8'##nabor', checknabor) then
                 cfg.config.Nabor = checknabor.v
@@ -485,7 +485,7 @@ function imgui.OnDrawFrame()
         if menu == 4 then
             imgui.Text(u8'/mb') 
             imgui.SameLine()
-            imgui.Ques('Быстрое открытие /members')
+            imgui.Ques('ГЃГ»Г±ГІГ°Г®ГҐ Г®ГІГЄГ°Г»ГІГЁГҐ /members')
             imgui.SameLine()
             if imgui.ToggleButton('##mb', cmdmb) then
                 cfg.config.CmdMb = cmdmb.v
@@ -493,7 +493,7 @@ function imgui.OnDrawFrame()
             end
             imgui.Text(u8'/de') 
             imgui.SameLine()
-            imgui.Ques('Быстрое создание дигла /de [Кол-вл]')
+            imgui.Ques('ГЃГ»Г±ГІГ°Г®ГҐ Г±Г®Г§Г¤Г Г­ГЁГҐ Г¤ГЁГЈГ«Г  /de [ГЉГ®Г«-ГўГ«]')
             imgui.SameLine()
             if imgui.ToggleButton('##de', cmdde) then
                 cfg.config.CmdDe = cmdde.v
@@ -501,7 +501,7 @@ function imgui.OnDrawFrame()
             end
             imgui.Text(u8'/m4') 
             imgui.SameLine()
-            imgui.Ques('Быстрое создание эмки /de [Кол-вл]')
+            imgui.Ques('ГЃГ»Г±ГІГ°Г®ГҐ Г±Г®Г§Г¤Г Г­ГЁГҐ ГЅГ¬ГЄГЁ /de [ГЉГ®Г«-ГўГ«]')
             imgui.SameLine()
             if imgui.ToggleButton('##m4', cmdm4) then
                 cfg.config.CmdM4 = cmdm4.v
@@ -509,7 +509,7 @@ function imgui.OnDrawFrame()
             end
         end
         if menu == 5 then
-            imgui.Text(u8'Смена темы скрипта')
+            imgui.Text(u8'Г‘Г¬ГҐГ­Г  ГІГҐГ¬Г» Г±ГЄГ°ГЁГЇГІГ ')
             imgui.SameLine()
             imgui.PushItemWidth(130)
             if imgui.Combo('', ComboStyle, styles) then
@@ -517,15 +517,15 @@ function imgui.OnDrawFrame()
                 inicfg.save(cfg,'Ghetto Helper/Ghetto Helper.ini')
                 apply_style(ComboStyle.v)
                 i = ComboStyle.v + 1
-                msg('Тема была изменена на '..u8:decode(styles[i]))
+                msg('Г’ГҐГ¬Г  ГЎГ»Г«Г  ГЁГ§Г¬ГҐГ­ГҐГ­Г  Г­Г  '..u8:decode(styles[i]))
             end
         end
         imgui.EndChild()
-        if imgui.Button(u8'Перезагрузить скрипт', imgui.ImVec2(-1, 25)) then msg('Скрипт был принудительно перезагружен') thisScript():reload() end
-        if imgui.Button(u8'Сбросить настройки', imgui.ImVec2(-1, 25)) then 
-            msg('Настройки были сборошены до состояние "По умолчанию"')
+        if imgui.Button(u8'ГЏГҐГ°ГҐГ§Г ГЈГ°ГіГ§ГЁГІГј Г±ГЄГ°ГЁГЇГІ', imgui.ImVec2(-1, 25)) then msg('Г‘ГЄГ°ГЁГЇГІ ГЎГ»Г« ГЇГ°ГЁГ­ГіГ¤ГЁГІГҐГ«ГјГ­Г® ГЇГҐГ°ГҐГ§Г ГЈГ°ГіГ¦ГҐГ­') thisScript():reload() end
+        if imgui.Button(u8'Г‘ГЎГ°Г®Г±ГЁГІГј Г­Г Г±ГІГ°Г®Г©ГЄГЁ', imgui.ImVec2(-1, 25)) then 
+            msg('ГЌГ Г±ГІГ°Г®Г©ГЄГЁ ГЎГ»Г«ГЁ Г±ГЎГ®Г°Г®ГёГҐГ­Г» Г¤Г® Г±Г®Г±ГІГ®ГїГ­ГЁГҐ "ГЏГ® ГіГ¬Г®Г«Г·Г Г­ГЁГѕ"')
             os.remove(getWorkingDirectory()..'/config/Ghetto Helper/Ghetto Helper.ini')
-            msg('Скрипт был принудительно перезагружен') 
+            msg('Г‘ГЄГ°ГЁГЇГІ ГЎГ»Г« ГЇГ°ГЁГ­ГіГ¤ГЁГІГҐГ«ГјГ­Г® ГЇГҐГ°ГҐГ§Г ГЈГ°ГіГ¦ГҐГ­') 
             window.v = true
             thisScript():reload()
         end
@@ -535,15 +535,15 @@ function imgui.OnDrawFrame()
         imgui.SetNextWindowPos(imgui.ImVec2(350.0, 250.0), imgui.Cond.FirstUseEver)
         imgui.Begin('Window Title', window_v,imgui.WindowFlags.AlwaysAutoResize)
         imgui.BeginChild('##left', imgui.ImVec2(550, 300), true)
-        imgui.Text(u8'Привет, это Ghetto Helper by VRush\nСкрипт создан для упрощения и комфорта игры в гетто или на каптах')
-        imgui.Text(u8'Описание функций вы можете посмотреть\nнаведя курсор на серый текст (?) возле переключателя функции')
-        imgui.TextColoredRGB('{FF0000}В СКРИПТЕ ПРИСУТСТВУЮТ ФУНКЦИИ ЗА КОТОРЫЕ ВЫ МОЖЕТЕ ПОЛУЧИТЬ НАКАЗАНИЕ')
-        imgui.TextColoredRGB('{FF0000}В СКРИПТЕ ПРИСУТСТВУЮТ ФУНКЦИИ ЗА КОТОРЫЕ ВЫ МОЖЕТЕ ПОЛУЧИТЬ НАКАЗАНИЕ')
-        imgui.TextColoredRGB('{FF0000}ИСПОЛЬЗУЙТЕ НА СВОЙ СТРАХ И РИСК')
-        imgui.TextDisabled(u8'Отключить запрещенный функции можно в Главном меню')
+        imgui.Text(u8'ГЏГ°ГЁГўГҐГІ, ГЅГІГ® Ghetto Helper by VRush\nГ‘ГЄГ°ГЁГЇГІ Г±Г®Г§Г¤Г Г­ Г¤Г«Гї ГіГЇГ°Г®Г№ГҐГ­ГЁГї ГЁ ГЄГ®Г¬ГґГ®Г°ГІГ  ГЁГЈГ°Г» Гў ГЈГҐГІГІГ® ГЁГ«ГЁ Г­Г  ГЄГ ГЇГІГ Гµ')
+        imgui.Text(u8'ГЋГЇГЁГ±Г Г­ГЁГҐ ГґГіГ­ГЄГ¶ГЁГ© ГўГ» Г¬Г®Г¦ГҐГІГҐ ГЇГ®Г±Г¬Г®ГІГ°ГҐГІГј\nГ­Г ГўГҐГ¤Гї ГЄГіГ°Г±Г®Г° Г­Г  Г±ГҐГ°Г»Г© ГІГҐГЄГ±ГІ (?) ГўГ®Г§Г«ГҐ ГЇГҐГ°ГҐГЄГ«ГѕГ·Г ГІГҐГ«Гї ГґГіГ­ГЄГ¶ГЁГЁ')
+        imgui.TextColoredRGB('{FF0000}Г‚ Г‘ГЉГђГ€ГЏГ’Г… ГЏГђГ€Г‘Г“Г’Г‘Г’Г‚Г“ГћГ’ Г”Г“ГЌГЉГ–Г€Г€ Г‡ГЂ ГЉГЋГ’ГЋГђГ›Г… Г‚Г› ГЊГЋГ†Г…Г’Г… ГЏГЋГ‹Г“Г—Г€Г’Гњ ГЌГЂГЉГЂГ‡ГЂГЌГ€Г…')
+        imgui.TextColoredRGB('{FF0000}Г‚ Г‘ГЉГђГ€ГЏГ’Г… ГЏГђГ€Г‘Г“Г’Г‘Г’Г‚Г“ГћГ’ Г”Г“ГЌГЉГ–Г€Г€ Г‡ГЂ ГЉГЋГ’ГЋГђГ›Г… Г‚Г› ГЊГЋГ†Г…Г’Г… ГЏГЋГ‹Г“Г—Г€Г’Гњ ГЌГЂГЉГЂГ‡ГЂГЌГ€Г…')
+        imgui.TextColoredRGB('{FF0000}Г€Г‘ГЏГЋГ‹ГњГ‡Г“Г‰Г’Г… ГЌГЂ Г‘Г‚ГЋГ‰ Г‘Г’ГђГЂГ• Г€ ГђГ€Г‘ГЉ')
+        imgui.TextDisabled(u8'ГЋГІГЄГ«ГѕГ·ГЁГІГј Г§Г ГЇГ°ГҐГ№ГҐГ­Г­Г»Г© ГґГіГ­ГЄГ¶ГЁГЁ Г¬Г®Г¦Г­Г® Гў ГѓГ«Г ГўГ­Г®Г¬ Г¬ГҐГ­Гѕ')
         imgui.EndChild()
-        if imgui.Button(u8'Закрыть', imgui.ImVec2(-1, 30)) then window_v.v = false window.v = true end
-        imgui.TextDisabled(u8'Показывать это окно при запуске')
+        if imgui.Button(u8'Г‡Г ГЄГ°Г»ГІГј', imgui.ImVec2(-1, 30)) then window_v.v = false window.v = true end
+        imgui.TextDisabled(u8'ГЏГ®ГЄГ Г§Г»ГўГ ГІГј ГЅГІГ® Г®ГЄГ­Г® ГЇГ°ГЁ Г§Г ГЇГіГ±ГЄГҐ')
         imgui.SameLine()
         if imgui.ToggleButton(u8'##ne', nepocaz) then cfg.config.mainwin = nepocaz.v inicfg.save(cfg, 'Ghetto Helper/Ghetto Helper.ini') end
         imgui.End()
@@ -568,21 +568,21 @@ function autoupdate(json_url, prefix, url)
                 lua_thread.create(function(prefix)
                   local dlstatus = require('moonloader').download_status
                   local color = -1
-                  msg('Обнаружено обновление. Пытаюсь обновиться c '..thisScript().version..' на '..updateversion)
+                  msg('ГЋГЎГ­Г Г°ГіГ¦ГҐГ­Г® Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГҐ. ГЏГ»ГІГ ГѕГ±Гј Г®ГЎГ­Г®ГўГЁГІГјГ±Гї c '..thisScript().version..' Г­Г  '..updateversion)
                   wait(250)
                   downloadUrlToFile(updatelink, thisScript().path,
                     function(id3, status1, p13, p23)
                       if status1 == dlstatus.STATUS_DOWNLOADINGDATA then
-                        print(string.format('Загружено %d из %d.', p13, p23))
+                        print(string.format('Г‡Г ГЈГ°ГіГ¦ГҐГ­Г® %d ГЁГ§ %d.', p13, p23))
                       elseif status1 == dlstatus.STATUS_ENDDOWNLOADDATA then
-                        print('Загрузка обновления завершена.')
-                        msg('Обновление завершено!')
+                        print('Г‡Г ГЈГ°ГіГ§ГЄГ  Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГї Г§Г ГўГҐГ°ГёГҐГ­Г .')
+                        msg('ГЋГЎГ­Г®ГўГ«ГҐГ­ГЁГҐ Г§Г ГўГҐГ°ГёГҐГ­Г®!')
                         goupdatestatus = true
                         lua_thread.create(function() wait(500) thisScript():reload() end)
                       end
                       if status1 == dlstatus.STATUSEX_ENDDOWNLOAD then
                         if goupdatestatus == nil then
-                          msg('Обновление прошло неудачно. Запускаю устаревшую версию.')
+                          msg('ГЋГЎГ­Г®ГўГ«ГҐГ­ГЁГҐ ГЇГ°Г®ГёГ«Г® Г­ГҐГіГ¤Г Г·Г­Г®. Г‡Г ГЇГіГ±ГЄГ Гѕ ГіГ±ГІГ Г°ГҐГўГёГіГѕ ГўГҐГ°Г±ГЁГѕ.')
                           update = false
                         end
                       end
@@ -592,11 +592,11 @@ function autoupdate(json_url, prefix, url)
                 )
               else
                 update = false
-                msg('Обновление не требуется.')
+                msg('ГЋГЎГ­Г®ГўГ«ГҐГ­ГЁГҐ Г­ГҐ ГІГ°ГҐГЎГіГҐГІГ±Гї.')
               end
             end
           else
-            msg('Не могу проверить обновление. Смиритесь или проверьте самостоятельно на '..url)
+            msg('ГЌГҐ Г¬Г®ГЈГі ГЇГ°Г®ГўГҐГ°ГЁГІГј Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГҐ. Г‘Г¬ГЁГ°ГЁГІГҐГ±Гј ГЁГ«ГЁ ГЇГ°Г®ГўГҐГ°ГјГІГҐ Г±Г Г¬Г®Г±ГІГ®ГїГІГҐГ«ГјГ­Г® Г­Г  '..url)
             update = false
           end
         end
@@ -604,7 +604,7 @@ function autoupdate(json_url, prefix, url)
     )
     while update ~= false do wait(100) end
 end
-                                                                                                                                                                                                                                                                                                                                                                                                                           function LoadScript() if thisScript().filename ~= 'Ghetto Helper by VRush.lua' then msg('Название скрипта было изменено, скрипт отключён') msg('Измените название скрипта на "Ghetto Helper by VRush.lua"') thisScript():unload() end end
+                                                                                                                                                                                                                                                                                                                                                                                                                           function LoadScript() if thisScript().filename ~= 'Ghetto Helper by VRush.lua' then msg('ГЌГ Г§ГўГ Г­ГЁГҐ Г±ГЄГ°ГЁГЇГІГ  ГЎГ»Г«Г® ГЁГ§Г¬ГҐГ­ГҐГ­Г®, Г±ГЄГ°ГЁГЇГІ Г®ГІГЄГ«ГѕГ·ВёГ­') msg('Г€Г§Г¬ГҐГ­ГЁГІГҐ Г­Г Г§ГўГ Г­ГЁГҐ Г±ГЄГ°ГЁГЇГІГ  Г­Г  "Ghetto Helper by VRush.lua"') thisScript():unload() end end
 
 function main()
     while not isSampAvailable() do wait(200) end
@@ -618,7 +618,7 @@ function main()
     end
         imgui.Process = false
         wait(5000)
-        msg('Загружен, автор VRush') 
+        msg('Г‡Г ГЈГ°ГіГ¦ГҐГ­, Г ГўГІГ®Г° VRush') 
         autoupdate("https://raw.githubusercontent.com/Venibon/Ghetto-Helper/main/autoupdate.json", '['..string.upper(thisScript().name)..']: ', "https://www.blast.hk/threads/138165/")
         sampRegisterChatCommand('gh', function()
             if cfg.config.mainwin then
@@ -631,7 +631,7 @@ function main()
         sampRegisterChatCommand("fu", function(arg)
             if cfg.config.UnInvite then
                 if not arg:match('%d+') then
-                    sampAddChatMessage(tag..'Правильный ввод: /fu [ID]', -1)
+                    sampAddChatMessage(tag..'ГЏГ°Г ГўГЁГ«ГјГ­Г»Г© ГўГўГ®Г¤: /fu [ID]', -1)
                 else
                     id = tonumber(arg)
                     sampSendChat('/uninvite '..arg..' '..cfg.config.UvalText)
@@ -673,15 +673,15 @@ function main()
             if cfg.config.Nabor then
                 lua_thread.create(function()
                     g = ComboNabor.v
-                    msg('Проходит набор в банду '..bands[g]..'. Всех ждем на респе!')
+                    msg('ГЏГ°Г®ГµГ®Г¤ГЁГІ Г­Г ГЎГ®Г° Гў ГЎГ Г­Г¤Гі '..bands[g]..'. Г‚Г±ГҐГµ Г¦Г¤ГҐГ¬ Г­Г  Г°ГҐГ±ГЇГҐ!')
                     printStringNow('Nabor', 6000)
-                    sampSendChat('/vr Проходит набор в банду '..bands[g]..'. Всех ждем на респе!')
+                    sampSendChat('/vr ГЏГ°Г®ГµГ®Г¤ГЁГІ Г­Г ГЎГ®Г° Гў ГЎГ Г­Г¤Гі '..bands[g]..'. Г‚Г±ГҐГµ Г¦Г¤ГҐГ¬ Г­Г  Г°ГҐГ±ГЇГҐ!')
                     wait(2000)
-                    sampSendChat('/fam Проходит набор в банду '..bands[g]..'. Всех ждем на респе!')
+                    sampSendChat('/fam ГЏГ°Г®ГµГ®Г¤ГЁГІ Г­Г ГЎГ®Г° Гў ГЎГ Г­Г¤Гі '..bands[g]..'. Г‚Г±ГҐГµ Г¦Г¤ГҐГ¬ Г­Г  Г°ГҐГ±ГЇГҐ!')
                     wait(2000)
-                    sampSendChat('/al Проходит набор в банду '..bands[g]..'. Всех ждем на респе!')
+                    sampSendChat('/al ГЏГ°Г®ГµГ®Г¤ГЁГІ Г­Г ГЎГ®Г° Гў ГЎГ Г­Г¤Гі '..bands[g]..'. Г‚Г±ГҐГµ Г¦Г¤ГҐГ¬ Г­Г  Г°ГҐГ±ГЇГҐ!')
                     wait(2000)
-                    sampSendChat('/vr Проходит набор в банду '..bands[g]..'. Всех ждем на респе!')
+                    sampSendChat('/vr ГЏГ°Г®ГµГ®Г¤ГЁГІ Г­Г ГЎГ®Г° Гў ГЎГ Г­Г¤Гі '..bands[g]..'. Г‚Г±ГҐГµ Г¦Г¤ГҐГ¬ Г­Г  Г°ГҐГ±ГЇГҐ!')
                 end)
             else 
                 sampSendChat('/1')
@@ -691,7 +691,7 @@ function main()
             if cfg.config.CmdDe then
                 lua_thread.create(function()
                     if arg == '' or arg == nil or arg == 0 then
-                        msg('Введите кол-во патрон')
+                        msg('Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г«-ГўГ® ГЇГ ГІГ°Г®Г­')
                     else
                         ptde = arg
                         sampSendChat('/creategun')
@@ -712,7 +712,7 @@ function main()
             if cfg.config.CmdM4 then
                 lua_thread.create(function()
                     if arg == '' or arg == nil or arg == 0 then
-                        msg('Введите кол-во патрон')
+                        msg('Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г«-ГўГ® ГЇГ ГІГ°Г®Г­')
                     else
                         ptm4 = arg
                         sampSendChat('/creategun')
@@ -737,7 +737,7 @@ function main()
         imgui.Process = window.v or window_v.v
         if cfg.config.SbivBind then
             if isKeyJustPressed(VK_Z) and not sampIsCursorActive() then
-                sampSendChat(' ')
+                sampSendChat('В ')
             end
         end
         if cfg.config.DrugTimer then
@@ -761,12 +761,12 @@ function main()
             if result then result, playerid = sampGetPlayerIdByCharHandle(target) end 
             if result and isKeyDown(VK_1) then 
                 name = sampGetPlayerNickname(playerid) 
-                sampSendChat('/me передал бандану')
+                sampSendChat('/me ГЇГҐГ°ГҐГ¤Г Г« ГЎГ Г­Г¤Г Г­Гі')
                 wait(1000)
                 sampSendChat('/invite '..playerid)
                 wait(3000)
                 sampSendChat('/giverank '..playerid..' '..invrank.v, -1)
-                msg('Вы приняли игрока с ником: '..name..' | Ранг: '..invrank.v)
+                msg('Г‚Г» ГЇГ°ГЁГ­ГїГ«ГЁ ГЁГЈГ°Г®ГЄГ  Г± Г­ГЁГЄГ®Г¬: '..name..' | ГђГ Г­ГЈ: '..invrank.v)
             end
         end
         if changestatspos then
@@ -779,7 +779,7 @@ function main()
         if isKeyJustPressed(VK_LBUTTON) and changestatspos then
             changestatspos = false
             sampToggleCursor(false)
-            msg('Позиция сохранена.')
+            msg('ГЏГ®Г§ГЁГ¶ГЁГї Г±Г®ГµГ°Г Г­ГҐГ­Г .')
             window.v = true
         end
     end
