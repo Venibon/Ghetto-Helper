@@ -1,5 +1,5 @@
 script_name("Ghetto Helper by VRush")
-script_version("1.4")
+script_version("1.5")
 script_author('VRush')
 
 --==--libs--==--
