@@ -1,5 +1,5 @@
 script_name("Ghetto Helper by VRush")
-script_version("1.5")
+script_version("1.4")
 script_author('VRush')
 
 --==--libs--==--
@@ -1263,9 +1263,7 @@ function onScriptTerminate(Script)
         if Script == thisScript() then
             lua_thread.create(function()
                 msg('Скрипт крашнулся/вылетел, сообщите о проблеме создателю скрипта')
-                msg('Его ВК откроется через 10 секунд.')
-                wait(10000)
-                os.execute('start https://vk.com/write453639513')
+                msg('Его ВК - https://vk.com/write453639513')
             end)
         end
     end
