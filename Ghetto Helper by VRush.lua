@@ -5,6 +5,8 @@ script_author('VRush')
 --==--libs--==--
 require 'moonloader'
 local imgui = require 'imgui'
+local imadd = require 'imgui_addons'
+imgui.ToggleButton = require('imgui_addons').ToggleButton
 local inicfg = require "inicfg"
 local sampev = require 'lib.samp.events'
 local dlstatus = require('moonloader').download_status
@@ -437,8 +439,7 @@ function imgui.OnDrawFrame()
             imgui.SameLine()
             imgui.Text(u8'/mb') 
             imgui.SameLine()
-            if imgui.BeginPopup(u8'mb') then
-                imgui.Ques(u8'Быстрое открытие /members')
+            imgui.Ques(u8'Быстрое открытие /members')
             if imgui.Checkbox('##de', cmdde) then
                 cfg.config.CmdDe = cmdde.v
                 inicfg.save(cfg,'Ghetto Helper/Ghetto Helper.ini')
